@@ -1,7 +1,8 @@
 from flask import Flask, request, session, jsonify, make_response
 
 app = Flask(__name__)
-app.json.compact = False
+# Disable pretty-printing for JSON responses (this is equivalent to compact=False)
+app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False
 
 app.secret_key = b'?w\x85Z\x08Q\xbdO\xb8\xa9\xb65Kj\xa9_'
 
